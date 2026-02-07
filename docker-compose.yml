@@ -1,0 +1,4 @@
+    # Adicione esta linha no serviço mysql:
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./docker/mysql/init.sql:/docker-entrypoint-initdb.d/init.sql
