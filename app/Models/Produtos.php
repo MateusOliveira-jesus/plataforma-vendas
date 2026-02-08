@@ -9,18 +9,9 @@ use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
-class Product extends Model
+class Produtos extends Model
 {
     use HasFactory, SoftDeletes;
-
-    /**
-     * Status constants
-     */
-    const STATUS_DRAFT = 'draft';
-    const STATUS_ACTIVE = 'active';
-    const STATUS_INACTIVE = 'inactive';
-    const STATUS_ARCHIVED = 'archived';
-
     /**
      * The attributes that are mass assignable.
      *
