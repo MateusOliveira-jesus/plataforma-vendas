@@ -8,6 +8,7 @@ use App\Http\Controllers\Api\AuthController;
 
 Route::get('/', [ApiController::class, 'index']);
 Route::get('/users', [UserController::class, 'getUsers']);
+// ->middleware('auth:sanctum');
 
 // Rotas públicas
 Route::prefix('auth')->group(function () {

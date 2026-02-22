@@ -50,6 +50,7 @@ class AuthController extends Controller
 
             $token = $user->createToken('auth_token')->plainTextToken;
 
+            DB::commit();
             return $this->successResponse(
                 data: [
                     'user' => $user->only(['id', 'name', 'email', 'phone', 'cpf_cnpj', 'birth_date', 'avatar_url', 'created_at']),
@@ -59,7 +60,6 @@ class AuthController extends Controller
                 message: 'Usuário registrado com sucesso!',
                 code: 201
             );
-            DB::commit();
         } catch (\Exception $e) {
             DB::rollback();
             Log::error('Erro ao registrar usuário: ' . $e->getMessage(), ['exception' => $e]);

@@ -25,9 +25,10 @@ return new class extends Migration
                   ->constrained('categories')
                   ->nullOnDelete()
                   ->cascadeOnUpdate();
-            
+            //relacionando usuario que criou a categoria
+            $table->foreignId('user_id')->nullable()->constrained('users')->nullOnDelete();
             // Status e visibilidade
-            $table->enum('status', ['active', 'inactive', 'archived'])->default('active');
+        $table->enum('status', ['active', 'inactive', 'archived'])->default('active');
             $table->boolean('is_featured')->default(false);
             
             // SEO
@@ -59,6 +60,7 @@ return new class extends Migration
             $table->index('name');
             $table->index('slug');
             $table->index('parent_id');
+            $table->index('user_id');
             $table->index('status');
             $table->index('is_featured');
             $table->index('sort_order');

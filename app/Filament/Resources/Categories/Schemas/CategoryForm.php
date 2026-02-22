@@ -20,8 +20,6 @@ class CategoryForm
     {
         return $schema
             ->schema([
-                
-                
                         Section::make('Informações Básicas')
                             ->schema([
                                 TextInput::make('name')
@@ -78,42 +76,42 @@ class CategoryForm
                             ])
                             ->columns(1)->columnSpanFull(),
 
-                        // Section::make('Imagens')
-                        //     ->schema([
-                        //         FileUpload::make('image')
-                        //             ->label('Imagem da Categoria')
-                        //             ->image()
-                        //             ->directory('categories')
-                        //             ->imageResizeMode('cover')
-                        //             ->imageCropAspectRatio('1:1')
-                        //             ->imageResizeTargetWidth('400')
-                        //             ->imageResizeTargetHeight('400')
-                        //             ->maxSize(2048)
-                        //             ->helperText('Recomendado: 400x400px'),
+                        Section::make('Imagens')
+                            ->schema([
+                                FileUpload::make('image')
+                                    ->label('Imagem da Categoria')
+                                    ->image()
+                                    ->directory('categories')
+                                    ->imageResizeMode('cover')
+                                    ->imageCropAspectRatio('1:1')
+                                    ->imageResizeTargetWidth('400')
+                                    ->imageResizeTargetHeight('400')
+                                    ->maxSize(2048)
+                                    ->helperText('Recomendado: 400x400px'),
 
-                        //         FileUpload::make('banner_image')
-                        //             ->label('Banner')
-                        //             ->image()
-                        //             ->directory('categories/banners')
-                        //             ->imageResizeMode('cover')
-                        //             ->imageCropAspectRatio('16:9')
-                        //             ->imageResizeTargetWidth('1200')
-                        //             ->imageResizeTargetHeight('400')
-                        //             ->maxSize(2048)
-                        //             ->helperText('Recomendado: 1200x400px'),
+                                FileUpload::make('banner_image')
+                                    ->label('Banner')
+                                    ->image()
+                                    ->directory('categories/banners')
+                                    ->imageResizeMode('cover')
+                                    ->imageCropAspectRatio('16:9')
+                                    ->imageResizeTargetWidth('1200')
+                                    ->imageResizeTargetHeight('400')
+                                    ->maxSize(2048)
+                                    ->helperText('Recomendado: 1200x400px'),
 
-                        //         FileUpload::make('icon')
-                        //             ->label('Ícone')
-                        //             ->image()
-                        //             ->directory('categories/icons')
-                        //             ->imageResizeMode('contain')
-                        //             ->imageCropAspectRatio('1:1')
-                        //             ->imageResizeTargetWidth('100')
-                        //             ->imageResizeTargetHeight('100')
-                        //             ->maxSize(512)
-                        //             ->helperText('Recomendado: 100x100px'),
-                        //     ])
-                        //     ->columns(1)->columnSpanFull(),
+                                FileUpload::make('icon')
+                                    ->label('Ícone')
+                                    ->image()
+                                    ->directory('categories/icons')
+                                    ->imageResizeMode('contain')
+                                    ->imageCropAspectRatio('1:1')
+                                    ->imageResizeTargetWidth('100')
+                                    ->imageResizeTargetHeight('100')
+                                    ->maxSize(512)
+                                    ->helperText('Recomendado: 100x100px'),
+                            ])
+                            ->columns(1)->columnSpanFull(),
 
                         Section::make('SEO')
                             ->schema([

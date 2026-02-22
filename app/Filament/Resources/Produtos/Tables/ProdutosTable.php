@@ -17,7 +17,7 @@ class ProdutosTable
     {
         return $table
             ->columns([
-                //
+                
             ])
             ->filters([
                 TrashedFilter::make(),

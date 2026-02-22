@@ -32,7 +32,8 @@ return new class extends Migration
             
             // Categorização
             $table->foreignId('category_id')->nullable()->constrained('categories')->nullOnDelete();
-            $table->foreignId('brand_id')->nullable()->constrained('brands')->nullOnDelete();
+            $table->foreignId('user_id')->nullable()->constrained('users')->nullOnDelete();
+            // $table->foreignId('brand_id')->nullable()->constrained('brands')->nullOnDelete();
             
             // Status
             $table->enum('status', ['draft', 'active', 'inactive', 'archived'])->default('draft');
@@ -83,7 +84,8 @@ return new class extends Migration
             $table->index('price');
             $table->index('status');
             $table->index('category_id');
-            $table->index('brand_id');
+            $table->index('user_id');
+            // $table->index('brand_id');
             $table->index('is_featured');
             $table->index('is_bestseller');
             $table->index(['status', 'published_at']);

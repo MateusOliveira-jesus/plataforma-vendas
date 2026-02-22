@@ -17,7 +17,7 @@ class UserController extends Controller
         // Por exemplo, usando o modelo User para buscar o usuário autenticado
         $user = User::all();
         return $user
-            ? $this->successResponse(data: $user->toArray(), message: 'Usuários encontrados com sucesso!')
+            ? $this->successResponse(data: ['countUsers' => $user->count(), 'users' => $user->toArray()], message: 'Usuários encontrados com sucesso!')
             : $this->errorResponse(message: 'Usuário não encontrado', code: 404);
     }
 }
